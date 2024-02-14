@@ -8,10 +8,15 @@ variable "instance_suffix" {
 }
 
 variable "instance_metadata" {
-  type = object()
+  type = object({})
   default = {
     node_type = "bastion"
   }
+}
+
+variable "instance_groups" {
+  type = list(string)
+  default = []
 }
 
 variable "image_id" {
@@ -53,4 +58,12 @@ variable "security_group_default_id" {
 variable "extra_security_group_ids" {
   type    = list(string)
   default = []
+}
+
+variable "cluster_hosts" {
+  type = map(object({
+    fixed_ip  = string
+    groups    = list(string)
+    variables = map(any)
+  }))
 }

@@ -2,8 +2,8 @@
 ###        SSH        ###
 #########################
 resource "openstack_networking_secgroup_v2" "sg_ssh" {
-  name        = format("%s-ssh", local.local.instance_name)
-  description = format("SSH for %s", local.local.instance_name)
+  name        = format("%s-ssh", local.instance_name)
+  description = format("SSH for %s", local.instance_name)
 }
 
 resource "openstack_networking_secgroup_rule_v2" "sg_ssh_rule1" {

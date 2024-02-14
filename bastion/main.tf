@@ -24,7 +24,7 @@ resource "openstack_blockstorage_volume_v3" "boot_volume" {
 }
 
 resource "openstack_compute_instance_v2" "node" {
-  name      = format("%s", var.instance_prefix)
+  name      = format("%s", local.instance_name)
   flavor_id = var.instance_flavor
   user_data = local.cloud_init
 

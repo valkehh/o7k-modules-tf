@@ -8,8 +8,13 @@ variable "instance_suffix" {
 }
 
 variable "instance_metadata" {
-  type = object()
+  type = object({})
   default = {}
+}
+
+variable "instance_groups" {
+  type = list(string)
+  default = []
 }
 
 variable "image_id" {
