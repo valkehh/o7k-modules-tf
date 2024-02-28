@@ -4,9 +4,5 @@ terraform {
       source = "registry.terraform.io/terraform-provider-openstack/openstack"
       version = "1.54.1"
     }
-    tls = {
-      source  = "hashicorp/tls"
-      version = "~> 3.0"
-    }
   }
 }

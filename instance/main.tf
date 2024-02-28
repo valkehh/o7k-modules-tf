@@ -1,10 +1,5 @@
-# ED25519 key
-resource "tls_private_key" "bastion_ssh_key" {
-  algorithm = "ED25519"
-}
-
 resource "openstack_networking_port_v2" "port_1" {
-  name                  = format("%s-port-1", local.instance_name)
+  name                  = "${var.instance_name}-port-1"
   network_id            = var.network_id
   admin_state_up        = "true"
   port_security_enabled = "true"
@@ -16,15 +11,15 @@ resource "openstack_networking_port_v2" "port_1" {
 }
 
 resource "openstack_blockstorage_volume_v3" "boot_volume" {
-  name                 = format("%s-boot", local.instance_name)
-  description          = format("%s-boot", local.instance_name)
+  name                 = "${var.instance_name}-boot"
+  description          = "${var.instance_name}-boot"
   size                 = var.boot_volume_size
   image_id             = var.image_id
   enable_online_resize = "false"
 }
 
 resource "openstack_compute_instance_v2" "node" {
-  name      = format("%s", local.instance_name)
+  name      = var.instance_name
   flavor_id = var.instance_flavor
   user_data = local.cloud_init
 
@@ -41,13 +36,4 @@ resource "openstack_compute_instance_v2" "node" {
     boot_index            = 0
     delete_on_termination = true
   }
-}
-
-resource "openstack_networking_floatingip_v2" "node_fip1" {
-  pool  = "public-network"
-}
-
-resource "openstack_networking_floatingip_associate_v2" "associate_node_fip1" {
-  floating_ip = openstack_networking_floatingip_v2.node_fip1.address
-  port_id = openstack_networking_port_v2.port_1.id
 }
