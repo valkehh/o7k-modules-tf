@@ -30,7 +30,6 @@ variable "boot_volume_size" {
 variable "ssh_public_keys" {
   description = "List of public SSH keys"
   type        = list(string)
-  default     = ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDOHz8cO/dB9R4Hpz0b309pHWqB6zNUvsAegGyEOF8zc4UgnL3HpRlApTMtD34BiH4ojmV2t/7MEoPbeiFJtjHxfFt2iNKgKX/8gtJyxGpAtZw4I3ZWOUP/mAxuyUc9JHJdWgj22udGnWI/2ndvNuO2R7gqCE44D4RfN+kl9kXfWeuqJYizJZa6bBxjbXnUVEsxJcyQ4CxLUdBBMaGNMuX7B40u9m9392QLg+Ez34kE0duPUq8c7dvV4Xmwt3yiTUDNIdlGnrurLgpztSIXZOkrFhoxwZnPpDmjc5OnjIIeLrd1xdjXCi813tQkwEASnzB0PD3u/8wFY6GKv1++MUiS7BdOnUtsgh7aMXrcOCN/3kOK0XhaYsWKm46r1HiTHUDQvLUoJkI0fv36No41eIP8L43YpXCJGykDbIlkhPbJ+OW88+NGrWexG5Ka4Ymclt5PjbOYo8nrLKFDhRwbjxi+tb9rwZyL0p7IAq1cwvNQbBtELHibcR1938hVEjb3fs2eg/7xCxWftVYJvugTkLxZlR2ASNqx9r8jGuHyvoO17Ak2GfgBJxo0a9zVy6lK7AFZDhjpzWpjKA6Kgfe9f8z14cY0RLi0q951GLbvNKNEr3Fc6eBvaUfVjwLHwkufHg8+gkhd7Q/kJhA96nhCulTeEjdiYGkJQ2WAt4FwuTffsQ== albin_berg@yahoo.com"]
 
 }
 
