@@ -14,7 +14,7 @@ variable "instance_groups" {
 
 variable "image_id" {
   type    = string
-  default = "f2d95e6d-35f4-410c-ac11-c2be4fb5ab01"
+  default = "7347976f-e269-4357-8691-2fb9ff45b1e1"
 }
 
 variable "instance_flavor" {
@@ -24,7 +24,7 @@ variable "instance_flavor" {
 
 variable "boot_volume_size" {
   type    = number
-  default = 60
+  default = 10
 }
 
 variable "ssh_public_keys" {

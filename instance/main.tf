@@ -14,12 +14,6 @@ data "external" "env" {
   #program = ["${path.module}/env.ps1"]
 }
 
-# Show the results of running the data source. This is a map of environment
-# variable names to their values.
-output "env" {
-  value = data.external.env.result
-}
-
 
 resource "openstack_networking_port_v2" "port_1" {
   name                  = "${var.instance_name}-port-1"
