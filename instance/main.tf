@@ -1,20 +1,3 @@
-provider "openstack" {
-  user_name   = data.external.env.result["OS_USERNAME"]
-  tenant_name = data.external.env.result["OS_TENANT_NAME"]
-  password    = data.external.env.result["OS_PASSWORD"]
-  auth_url    = data.external.env.result["OS_AUTH_URL"]
-  region      = data.external.env.result["OS_REGION_NAME"]
-}
-
-data "external" "env" {
-  program = ["${path.module}/env.sh"]
-
-  # For Windows (or Powershell core on MacOS and Linux),
-  # run a Powershell script instead
-  #program = ["${path.module}/env.ps1"]
-}
-
-
 resource "openstack_networking_port_v2" "port_1" {
   name                  = "${var.instance_name}-port-1"
   network_id            = var.network_id
